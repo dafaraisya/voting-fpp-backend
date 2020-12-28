@@ -27,11 +27,11 @@ var ip = [
 
 // Handle index actions
 exports.send = function (req, res) {
-  if(!ip.includes(req.ip.replace('::ffff:', ''))){
-    console.log(req.ip.replace('::ffff:', ''));
+//   if(!ip.includes(req.ip.replace('::ffff:', ''))){
+//     console.log(req.ip.replace('::ffff:', ''));
 
-    return res.status(500).send();
-}
+//     return res.status(500).send();
+// }
   Setting.get(function (err, settings) {
     if (err) {
       res.json({
@@ -74,7 +74,7 @@ exports.send = function (req, res) {
         {
           filename: "Tata Cara Pemilihan PEMIRA FPP UNDIP 2021.pdf",
           contentType: "application/pdf",
-          path: "http://pemira.fmipauns.com/procedure.pdf",
+          path: "http://pemira.fppundip.com/procedure.pdf",
         },
       ],
     };
