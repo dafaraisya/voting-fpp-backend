@@ -3559,7 +3559,7 @@ exports.new = function (req, res) {
 participants.forEach((_participant)=>{
   
   var participant = new Participant();
-  participant.name _participant.name;
+  participant.name = _participant.name;
   participant.nim = _participant.nim;
   participant.email = _participant.email;
   participant.session.id = "5fe9cc7ef88af802829f398f";
