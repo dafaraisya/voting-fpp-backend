@@ -3563,7 +3563,7 @@ participants.forEach((_participant)=>{
   participant.nim = _participant.nim;
   participant.email = _participant.email;
   participant.session.id = "5fe9cc7ef88af802829f398f";
-  participant.session.number = 1;                                                                                                         body.sessionNumber;
+  participant.session.number = 1;    
   participant.session.min = new Date("2021-01-03T07:00:00.000Z");
   participant.session.max = new Date("2021-01-03T17:00:00.000Z");
 
