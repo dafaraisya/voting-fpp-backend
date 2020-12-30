@@ -22,12 +22,11 @@ var ip = [
   "114.5.109.44",
   "182.2.37.131",
   "120.188.74.160",
-  "182.2.39.180"
+  "182.2.39.180",
 ];
 
 // Handle index actions
 exports.index = function (req, res) {
-  
   Participant.get(function (err, participants) {
     if (err) {
       return res.json({
@@ -48,7 +47,6 @@ exports.index = function (req, res) {
 
 // Handle search actions
 exports.search = function (req, res) {
-  
   Participant.find(
     {
       name: {
@@ -76,7 +74,6 @@ exports.search = function (req, res) {
 
 // Handle index actions
 exports.indexByPage = async function (req, res) {
-  
   var page = req.params.page;
   try {
     var totalParticipant = await Participant.count();
@@ -112,7 +109,35 @@ exports.view = function (req, res) {
 
 // Handle create actions
 exports.new = function (req, res) {
-  
+  /*var participants = [];
+
+  participants.forEach((_participant) => {
+    var participant = new Participant();
+    participant.name = _participant.name;
+    participant.nim = _participant.nim;
+    participant.email = _participant.email;
+    participant.session.id = "5fe9cc7ef88af802829f398f";
+    participant.session.number = 1;
+    participant.session.min = new Date("2021-01-03T07:00:00.000Z");
+    participant.session.max = new Date("2021-01-03T17:00:00.000Z");
+
+    // Save and validate
+    participant.save(function (err) {
+      if (err) res.json(err);
+
+      Session.findById("5fe9cc7ef88af802829f398f", function (err, session) {
+        if (err) throw err;
+        session.total_participant++;
+        Session.findOneAndUpdate({ _id: session._id }, { $set: session }).then(
+          (session) => {
+            if (session) {
+            } else {
+            }
+          }
+        );
+      });
+    });
+  }); */
 
   var participant = new Participant();
   participant.name = req.body.name;
@@ -148,8 +173,6 @@ exports.new = function (req, res) {
 
 // Handle update actions
 exports.update = function (req, res) {
-  
-
   var moveSession = false;
   var oldSession = {};
   var newSession = {};
@@ -266,7 +289,6 @@ exports.vote = function (req, res) {
 
 // Handle delete actions
 exports.delete = function (req, res) {
-  
   Participant.findById(req.params.id, function (err, participant) {
     if (err) return res.send(err);
 
@@ -300,7 +322,6 @@ exports.delete = function (req, res) {
 
 // Handle delete actions
 exports.force_delete = function (req, res) {
-  
   Participant.deleteOne(
     {
       _id: req.params.id,
