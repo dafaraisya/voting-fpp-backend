@@ -67,11 +67,11 @@ exports.send = function (req, res) {
     var mailOptions = {
       from: setting.email.email,
       to: req.body.to,
-      subject: "PEMIRA FPP UNDIP 2021",
+      subject: "PEMIRA FPP UNDIP 2020",
       html:
         "<h1>Halo " +
         req.body.name +
-        "</h1><p>Kami mengundang anda untuk mengikuti PEMIRA FPP UNDIP 2021. Berikut kami lampirkan kartu pemilihan anda beserta dengan tata cara pemilihan.</p>",
+        "</h1><p>Kami mengundang anda untuk mengikuti PEMIRA FPP UNDIP 2020. Berikut kami lampirkan kartu pemilihan anda beserta dengan tata cara pemilihan.</p>",
       attachments: [
         {
           filename:
@@ -79,7 +79,7 @@ exports.send = function (req, res) {
           content: votingCardImage,
         },
         {
-          filename: "Tata Cara Pemilihan PEMIRA FPP UNDIP 2021.pdf",
+          filename: "Tata Cara Pemilihan PEMIRA FPP UNDIP 2020.pdf",
           contentType: "application/pdf",
           path: "http://pemira.fppundip.com/procedure.pdf",
         },
